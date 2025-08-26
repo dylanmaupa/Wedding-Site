@@ -70,9 +70,9 @@ function App() {
           <GallerySection />
         </section>
         
-        <section id="registry">
+        {/* <section id="registry">
           <RegistrySection />
-        </section>
+        </section> */}
         
         <section id="guestbook">
           <GuestbookSection />

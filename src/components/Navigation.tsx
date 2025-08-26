@@ -13,7 +13,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange 
     { id: 'details', label: 'Details' },
     { id: 'rsvp', label: 'RSVP' },
     { id: 'gallery', label: 'Gallery' },
-    { id: 'registry', label: 'Registry' },
+    // { id: 'registry', label: 'Registry' },
     { id: 'guestbook', label: 'Guestbook' },
   ];
 

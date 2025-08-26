@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 .env
 .bolt
+
+GOOGLE_SHEETS_SETUP.md

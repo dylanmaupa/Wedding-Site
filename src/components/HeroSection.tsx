@@ -3,14 +3,14 @@ import { Calendar, MapPin } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({
-    days: 5,
-    hours: 5,
-    minutes: 5,
-    seconds: 5,
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
   });
 
   useEffect(() => {
-    const weddingDate = new Date('2024-09-15T16:00:00').getTime();
+    const weddingDate = new Date('2025-10-25T00:00:00').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -32,11 +32,11 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-cream-gradient flex items-center justify-center px-4 pt-16">
+    <section className="min-h-screen bg-cream-gradient flex items-center justify-center px-4 pt-16 pb-8">
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-8 animate-fade-in">
           <h1 className="font-playfair text-6xl md:text-8xl lg:text-9xl font-bold text-dark-olive mb-4">
-            Sarah <span className="text-soft-rose">&</span> Michael
+            Kudakwashe <span className="text-soft-rose">&</span> Makanaka
           </h1>
           <p className="font-montserrat text-xl md:text-2xl text-muted-sage font-light">
             Together forever, never apart
@@ -46,12 +46,12 @@ const HeroSection: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12 font-montserrat text-dark-olive">
           <div className="flex items-center gap-2">
             <Calendar className="h-5 w-5 text-soft-rose" />
-            <span className="text-lg">September 15, 2024</span>
+            <span className="text-lg">October 25, 2025</span>
           </div>
           <div className="hidden md:block w-2 h-2 bg-soft-rose rounded-full"></div>
           <div className="flex items-center gap-2">
             <MapPin className="h-5 w-5 text-soft-rose" />
-            <span className="text-lg">Napa Valley, California</span>
+            <span className="text-lg">Strathaven Shiloh Gardens, Harare</span>
           </div>
         </div>
 

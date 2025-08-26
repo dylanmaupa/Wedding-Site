@@ -35,7 +35,7 @@ const EventDetails: React.FC = () => {
                 </div>
                 <div className="bg-cream rounded-xl p-4">
                   <p className="font-montserrat text-sm text-muted-sage">
-                    <strong>Parking:</strong> Complimentary valet parking available<br/>
+                    <strong>Parking:</strong> Complimentary valet parking available<br />
                     <strong>Accessibility:</strong> Wheelchair accessible venue
                   </p>
                 </div>
@@ -72,8 +72,8 @@ const EventDetails: React.FC = () => {
                 <div className="bg-rose-gradient rounded-xl p-6 text-white">
                   <h4 className="font-montserrat font-semibold mb-3">Garden Party Elegant</h4>
                   <p className="font-montserrat text-sm leading-relaxed">
-                    We encourage you to dress in elegant attire suitable for an outdoor garden setting. 
-                    Think cocktail dresses, dress shirts with slacks, or nice sundresses. 
+                    We encourage you to dress in elegant attire suitable for an outdoor garden setting.
+                    Think cocktail dresses, dress shirts with slacks, or nice sundresses.
                     Avoid stilettos as we'll be on grass and garden paths.
                   </p>
                 </div>
@@ -88,7 +88,7 @@ const EventDetails: React.FC = () => {
                   </div>
                   <div className="bg-cream rounded-xl p-4">
                     <h5 className="font-montserrat font-semibold text-dark-olive mb-2">Weather</h5>
-                    <p className="font-montserrat text-sm text-muted-sage">Expect 75°F<br/>Light breeze</p>
+                    <p className="font-montserrat text-sm text-muted-sage">Expect 75°F<br />Light breeze</p>
                   </div>
                 </div>
               </div>
@@ -100,14 +100,36 @@ const EventDetails: React.FC = () => {
                   Location Map
                 </h3>
               </div>
-              <div className="h-64 bg-cream flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-soft-rose mx-auto mb-4" />
-                  <p className="font-montserrat text-muted-sage">Interactive map would be embedded here</p>
-                  <button className="mt-3 bg-dark-olive text-white px-4 py-2 rounded-full font-montserrat text-sm hover:bg-muted-sage transition-colors">
-                    Get Directions
-                  </button>
-                </div>
+              <div className="h-80">
+                {/* <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.4!2d-122.2869!3d38.2975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857e213e259197%3A0x417457f5b9b4b1a5!2sNapa%20Valley%2C%20CA!5e0!3m2!1sen!2sus!4v1635959999999!5m2!1sen!2sus"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="rounded-b-3xl"
+                ></iframe> */}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3798.9937684878582!2d31.021999075174268!3d-17.791989983165774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ3JzMxLjIiUyAzMcKwMDEnMjguNSJF!5e0!3m2!1sen!2szw!4v1756144976683!5m2!1sen!2szw"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  // className="rounded-b-3xl"
+                  ></iframe>
+              </div>
+              <div className="p-4 bg-cream">
+                <a
+                  href="https://maps.app.goo.gl/rR5Vbvd9beJzP7hv8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center bg-dark-olive text-white px-4 py-2 rounded-full font-montserrat text-sm hover:bg-muted-sage transition-colors"
+                >
+                  Get Directions
+                </a>
               </div>
             </div>
           </div>

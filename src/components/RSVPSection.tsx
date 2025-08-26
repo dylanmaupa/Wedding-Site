@@ -11,11 +11,49 @@ const RSVPSection: React.FC = () => {
     message: '',
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('RSVP submitted:', formData);
-    alert('Thank you for your RSVP! We can\'t wait to celebrate with you.');
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    // Replace this URL with your Google Apps Script web app URL
+    const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+    
+    const formDataToSend = new FormData();
+    Object.entries(formData).forEach(([key, value]) => {
+      formDataToSend.append(key, value);
+    });
+    formDataToSend.append('timestamp', new Date().toISOString());
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: formDataToSend,
+    })
+    .then(response => {
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          guests: '1',
+          attendance: '',
+          dietaryRestrictions: '',
+          message: '',
+        });
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      setSubmitStatus('error');
+    })
+    .finally(() => {
+      setIsSubmitting(false);
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -146,11 +184,24 @@ const RSVPSection: React.FC = () => {
             <div className="text-center pt-4">
               <button
                 type="submit"
-                className="bg-dark-olive hover:bg-muted-sage text-white font-montserrat font-semibold px-12 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
+                disabled={isSubmitting}
+                className="bg-dark-olive hover:bg-muted-sage disabled:bg-muted-sage/50 text-white font-montserrat font-semibold px-12 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg disabled:transform-none disabled:cursor-not-allowed"
               >
-                Send RSVP
+                {isSubmitting ? 'Sending...' : 'Send RSVP'}
               </button>
             </div>
+
+            {submitStatus === 'success' && (
+              <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl text-center">
+                <p className="font-montserrat">Thank you for your RSVP! We can't wait to celebrate with you. 💕</p>
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-xl text-center">
+                <p className="font-montserrat">Sorry, there was an error submitting your RSVP. Please try again or contact us directly.</p>
+              </div>
+            )}
           </form>
         </div>
 
