@@ -13,7 +13,7 @@ const GuestbookSection: React.FC = () => {
     message: '',
   });
 
-  const [guestMessages] = useState<GuestMessage[]>([
+  const [guestMessages, setGuestMessages] = useState<GuestMessage[]>([
     {
       name: 'Emma & James',
       message: 'We are so happy for you both! Can\'t wait to celebrate your special day. Wishing you a lifetime of love and happiness! 💕',
@@ -31,12 +31,42 @@ const GuestbookSection: React.FC = () => {
     },
   ]);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Guestbook message submitted:', formData);
-    alert('Thank you for your message! It means the world to us.');
-    setFormData({ name: '', message: '' });
+    
+    if (!formData.name.trim() || !formData.message.trim()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Create new message
+    const newMessage: GuestMessage = {
+      name: formData.name.trim(),
+      message: formData.message.trim(),
+      date: new Date().toISOString().split('T')[0], // Format: YYYY-MM-DD
+    };
+
+    // Simulate a brief delay for better UX
+    setTimeout(() => {
+      // Add new message to the beginning of the array
+      setGuestMessages(prevMessages => [newMessage, ...prevMessages]);
+      
+      // Reset form
+      setFormData({ name: '', message: '' });
+      setIsSubmitting(false);
+      
+      // Show success message briefly
+      const successElement = document.createElement('div');
+      successElement.className = 'fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 font-montserrat';
+      successElement.textContent = 'Thank you for your message! 💕';
+      document.body.appendChild(successElement);
+      
+      setTimeout(() => {
+        document.body.removeChild(successElement);
+      }, 3000);
+    }, 500);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -99,10 +129,11 @@ const GuestbookSection: React.FC = () => {
               
               <button
                 type="submit"
-                className="w-full bg-dark-olive hover:bg-muted-sage text-white font-montserrat font-semibold py-3 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2"
+                disabled={isSubmitting || !formData.name.trim() || !formData.message.trim()}
+                className="w-full bg-dark-olive hover:bg-muted-sage disabled:bg-muted-sage/50 text-white font-montserrat font-semibold py-3 rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 disabled:cursor-not-allowed"
               >
                 <Send className="h-4 w-4" />
-                <span>Send Message</span>
+                <span>{isSubmitting ? 'Adding Message...' : 'Send Message'}</span>
               </button>
             </form>
           </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, Users, Utensils } from 'lucide-react';
+import { Heart, Users, Utensils, MessageCircle } from 'lucide-react';
 
 const RSVPSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -14,26 +14,37 @@ const RSVPSection: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+  // Replace with your actual WhatsApp number (include country code without + or spaces)
+  const whatsappNumber = '+263788524928'; // Example: US number would be like 15551234567
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Replace this URL with your Google Apps Script web app URL
-    const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
-    
-    const formDataToSend = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      formDataToSend.append(key, value);
-    });
-    formDataToSend.append('timestamp', new Date().toISOString());
+    // Create WhatsApp message
+    const whatsappMessage = `🎉 *Wedding RSVP* 🎉
 
-    fetch(scriptURL, {
-      method: 'POST',
-      body: formDataToSend,
-    })
-    .then(response => {
-      if (response.ok) {
+*Name:* ${formData.name}
+*Email:* ${formData.email}
+*Number of Guests:* ${formData.guests}
+*Attendance:* ${formData.attendance}
+*Dietary Restrictions:* ${formData.dietaryRestrictions || 'None'}
+*Message:* ${formData.message || 'No message'}
+
+*Date:* ${new Date().toLocaleDateString()}
+*Time:* ${new Date().toLocaleTimeString()}`;
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Simulate processing time
+    setTimeout(() => {
+      try {
+        // Open WhatsApp
+        window.open(whatsappURL, '_blank');
+        
         setSubmitStatus('success');
         setFormData({
           name: '',
@@ -43,17 +54,13 @@ const RSVPSection: React.FC = () => {
           dietaryRestrictions: '',
           message: '',
         });
-      } else {
-        throw new Error('Network response was not ok');
+      } catch (error) {
+        console.error('Error:', error);
+        setSubmitStatus('error');
+      } finally {
+        setIsSubmitting(false);
       }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      setSubmitStatus('error');
-    })
-    .finally(() => {
-      setIsSubmitting(false);
-    });
+    }, 1000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -185,21 +192,22 @@ const RSVPSection: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-dark-olive hover:bg-muted-sage disabled:bg-muted-sage/50 text-white font-montserrat font-semibold px-12 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg disabled:transform-none disabled:cursor-not-allowed"
+                className="bg-dark-olive hover:bg-muted-sage disabled:bg-muted-sage/50 text-white font-montserrat font-semibold px-12 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg disabled:transform-none disabled:cursor-not-allowed flex items-center justify-center space-x-2"
               >
-                {isSubmitting ? 'Sending...' : 'Send RSVP'}
+                <MessageCircle className="h-5 w-5" />
+                <span>{isSubmitting ? 'Opening WhatsApp...' : 'Send via WhatsApp'}</span>
               </button>
             </div>
 
             {submitStatus === 'success' && (
               <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl text-center">
-                <p className="font-montserrat">Thank you for your RSVP! We can't wait to celebrate with you. 💕</p>
+                <p className="font-montserrat">Thank you for your RSVP! WhatsApp should have opened with your message. We can't wait to celebrate with you! 💕</p>
               </div>
             )}
 
             {submitStatus === 'error' && (
               <div className="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-xl text-center">
-                <p className="font-montserrat">Sorry, there was an error submitting your RSVP. Please try again or contact us directly.</p>
+                <p className="font-montserrat">Sorry, there was an error opening WhatsApp. Please try again or contact us directly.</p>
               </div>
             )}
           </form>
@@ -207,7 +215,7 @@ const RSVPSection: React.FC = () => {
 
         <div className="text-center mt-8">
           <p className="font-montserrat text-white/80 text-sm">
-            Please RSVP by August 15, 2024 • Questions? Contact us at hello@sarahandmichael.com
+            Please RSVP by August 15, 2025 • Questions? WhatsApp us directly!
           </p>
         </div>
       </div>

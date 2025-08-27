@@ -3,11 +3,11 @@ import { Clock, MapPin, Utensils, Music, Camera } from 'lucide-react';
 
 const EventDetails: React.FC = () => {
   const schedule = [
-    { time: '3:30 PM', event: 'Guest Arrival & Cocktails', icon: Utensils },
-    { time: '4:00 PM', event: 'Wedding Ceremony', icon: Camera },
-    { time: '4:30 PM', event: 'Photos & More Cocktails', icon: Camera },
-    { time: '6:00 PM', event: 'Reception & Dinner', icon: Utensils },
-    { time: '8:00 PM', event: 'Dancing & Celebration', icon: Music },
+    { time: '10:30 AM', event: 'Guest Arrival', icon: Utensils },
+    { time: '11:00 AM', event: 'Wedding Ceremony', icon: Camera },
+    { time: '13:30 PM', event: 'Mocktails & Snacks', icon: Camera },
+    { time: '14:00 PM', event: 'Lunch', icon: Utensils },
+    { time: '14:30 PM', event: 'Reception & Dancing', icon: Music },
   ];
 
   return (
@@ -29,14 +29,37 @@ const EventDetails: React.FC = () => {
               </h3>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-montserrat font-semibold text-dark-olive">Vineyard Estate Gardens</h4>
-                  <p className="font-montserrat text-muted-sage">1234 Wine Country Lane</p>
-                  <p className="font-montserrat text-muted-sage">Napa Valley, CA 94558</p>
+                  <h4 className="font-montserrat font-semibold text-dark-olive">Strathaven Shiloh Gardens</h4>
+                  <p className="font-montserrat text-muted-sage">15 Golda Ave</p>
+                  <p className="font-montserrat text-muted-sage">Strathaven, Harare</p>
                 </div>
                 <div className="bg-cream rounded-xl p-4">
                   <p className="font-montserrat text-sm text-muted-sage">
                     <strong>Parking:</strong> Complimentary valet parking available<br />
                     <strong>Accessibility:</strong> Wheelchair accessible venue
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-3xl p-8 shadow-lg mb-8">
+              <h3 className="font-playfair text-2xl font-semibold text-dark-olive mb-6 flex items-center">
+                <MapPin className="h-6 w-6 text-soft-rose mr-3" />
+                PLEASE NOTE
+              </h3>
+              <div className="space-y-4">
+                <div className="bg-cream rounded-xl p-4">
+                  <p className="font-montserrat text-sm text-muted-sage">
+                    <span>
+                      <strong>CHILDREN:</strong> We respectfully request no children.
+                      Thank you for your understanding<br />
+                    </span>
+
+                    <span className='span-space'>
+                      <strong>INVITATION:</strong> Attendance and entry are strictly by invitation.
+                      We appreciate your understanding. <br />
+                    </span>
+
+                    <span><strong>GIFTS:</strong> Preferably cash gifts are appreciated thank you.</span>
                   </p>
                 </div>
               </div>
@@ -70,11 +93,9 @@ const EventDetails: React.FC = () => {
               </h3>
               <div className="space-y-6">
                 <div className="bg-rose-gradient rounded-xl p-6 text-white">
-                  <h4 className="font-montserrat font-semibold mb-3">Garden Party Elegant</h4>
+                  <h4 className="font-montserrat font-semibold mb-3">Elegant Formal or Smart Casual</h4>
                   <p className="font-montserrat text-sm leading-relaxed">
-                    We encourage you to dress in elegant attire suitable for an outdoor garden setting.
-                    Think cocktail dresses, dress shirts with slacks, or nice sundresses.
-                    Avoid stilettos as we'll be on grass and garden paths.
+                    Our wedding style is Elegant Formal or Smart Casual. Gentlemen may wear suits, dress shirts, or tailored outfits, while ladies can choose cocktail dresses, or chic ensembles. Dress to impress, with comfort in mind, as we celebrate in style.
                   </p>
                 </div>
                 <div className="grid grid-cols-2 gap-4 text-center">
@@ -88,7 +109,7 @@ const EventDetails: React.FC = () => {
                   </div>
                   <div className="bg-cream rounded-xl p-4">
                     <h5 className="font-montserrat font-semibold text-dark-olive mb-2">Weather</h5>
-                    <p className="font-montserrat text-sm text-muted-sage">Expect 75°F<br />Light breeze</p>
+                    <p className="font-montserrat text-sm text-muted-sage">Expect 30°C<br />Light breeze</p>
                   </div>
                 </div>
               </div>
@@ -101,16 +122,6 @@ const EventDetails: React.FC = () => {
                 </h3>
               </div>
               <div className="h-80">
-                {/* <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3048.4!2d-122.2869!3d38.2975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80857e213e259197%3A0x417457f5b9b4b1a5!2sNapa%20Valley%2C%20CA!5e0!3m2!1sen!2sus!4v1635959999999!5m2!1sen!2sus"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-b-3xl"
-                ></iframe> */}
                 <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3798.9937684878582!2d31.021999075174268!3d-17.791989983165774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDQ3JzMxLjIiUyAzMcKwMDEnMjguNSJF!5e0!3m2!1sen!2szw!4v1756144976683!5m2!1sen!2szw"
                   width="100%"
                   height="100%"
@@ -118,8 +129,8 @@ const EventDetails: React.FC = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  // className="rounded-b-3xl"
-                  ></iframe>
+                // className="rounded-b-3xl"
+                ></iframe>
               </div>
               <div className="p-4 bg-cream">
                 <a

@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="text-center">
           <div className="flex items-center justify-center space-x-2 mb-6">
             <Heart className="h-8 w-8 text-soft-rose" fill="currentColor" />
-            <h3 className="font-playfair text-3xl font-bold">Sarah & Michael</h3>
+            <h3 className="font-playfair text-3xl font-bold">Maka & Kuda</h3>
             <Heart className="h-8 w-8 text-soft-rose" fill="currentColor" />
           </div>
           
@@ -40,10 +40,10 @@ const Footer: React.FC = () => {
           
           <div className="border-t border-white/20 pt-6">
             <p className="font-montserrat text-white/60 text-sm">
-              September 15, 2024 • Napa Valley, California
+              October 25, 2025 • Shiloh Gardens, Strathaven, Harare
             </p>
             <p className="font-montserrat text-white/40 text-xs mt-2">
-              Made with ❤️ for Sarah & Michael's Wedding
+              Made with ❤️ for Maka & Kuda's Wedding
             </p>
           </div>
         </div>
