@@ -233,7 +233,7 @@ const RSVPSection: React.FC = () => {
 
         <div className="text-center mt-8">
           <p className="font-montserrat text-white/80 text-sm">
-            Please RSVP by August 15, 2025 • Questions? WhatsApp us directly!
+            Please RSVP by October 5, 2025 • Questions? WhatsApp us directly!
           </p>
         </div>
       </div>
