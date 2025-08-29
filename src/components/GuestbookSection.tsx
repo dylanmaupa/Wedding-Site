@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send, Heart } from 'lucide-react';
 
 interface GuestMessage {
@@ -13,25 +13,57 @@ const GuestbookSection: React.FC = () => {
     message: '',
   });
 
-  const [guestMessages, setGuestMessages] = useState<GuestMessage[]>([
-    {
-      name: 'Emma & James',
-      message: 'We are so happy for you both! Can\'t wait to celebrate your special day. Wishing you a lifetime of love and happiness! 💕',
-      date: '2024-03-15',
-    },
-    {
-      name: 'The Johnson Family',
-      message: 'Sarah and Michael, you two are perfect for each other! We\'re thrilled to be part of your wedding celebration.',
-      date: '2024-03-10',
-    },
-    {
-      name: 'Alex & Sophie',
-      message: 'From your college friends - we\'ve watched your love story unfold and it\'s been beautiful to witness. Congratulations!',
-      date: '2024-03-08',
-    },
-  ]);
+  const [guestMessages, setGuestMessages] = useState<GuestMessage[]>([]);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Load messages from localStorage on component mount
+  useEffect(() => {
+    const savedMessages = localStorage.getItem('weddingGuestMessages');
+    if (savedMessages) {
+      try {
+        const parsedMessages = JSON.parse(savedMessages);
+        setGuestMessages(parsedMessages);
+      } catch (error) {
+        console.error('Error loading saved messages:', error);
+        // Set default messages if localStorage is corrupted
+        setDefaultMessages();
+      }
+    } else {
+      // Set default messages if no saved messages exist
+      setDefaultMessages();
+    }
+  }, []);
+
+  const setDefaultMessages = () => {
+    const defaultMessages = [
+      {
+        name: 'Emma & James',
+        message: 'We are so happy for you both! Can\'t wait to celebrate your special day. Wishing you a lifetime of love and happiness! 💕',
+        date: '2024-03-15',
+      },
+      {
+        name: 'The Johnson Family',
+        message: 'Sarah and Michael, you two are perfect for each other! We\'re thrilled to be part of your wedding celebration.',
+        date: '2024-03-10',
+      },
+      {
+        name: 'Alex & Sophie',
+        message: 'From your college friends - we\'ve watched your love story unfold and it\'s been beautiful to witness. Congratulations!',
+        date: '2024-03-08',
+      },
+    ];
+    setGuestMessages(defaultMessages);
+    localStorage.setItem('weddingGuestMessages', JSON.stringify(defaultMessages));
+  };
+
+  // Save messages to localStorage whenever guestMessages changes
+  useEffect(() => {
+    if (guestMessages.length > 0) {
+      localStorage.setItem('weddingGuestMessages', JSON.stringify(guestMessages));
+    }
+  }, [guestMessages]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -48,25 +80,29 @@ const GuestbookSection: React.FC = () => {
       date: new Date().toISOString().split('T')[0], // Format: YYYY-MM-DD
     };
 
-    // Simulate a brief delay for better UX
+    // Add new message to the beginning of the array
+    setGuestMessages(prevMessages => {
+      const updatedMessages = [newMessage, ...prevMessages];
+      // Save to localStorage immediately
+      localStorage.setItem('weddingGuestMessages', JSON.stringify(updatedMessages));
+      return updatedMessages;
+    });
+    
+    // Reset form
+    setFormData({ name: '', message: '' });
+    setIsSubmitting(false);
+    
+    // Show success message briefly
+    const successElement = document.createElement('div');
+    successElement.className = 'fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 font-montserrat';
+    successElement.textContent = 'Thank you for your message! 💕';
+    document.body.appendChild(successElement);
+    
     setTimeout(() => {
-      // Add new message to the beginning of the array
-      setGuestMessages(prevMessages => [newMessage, ...prevMessages]);
-      
-      // Reset form
-      setFormData({ name: '', message: '' });
-      setIsSubmitting(false);
-      
-      // Show success message briefly
-      const successElement = document.createElement('div');
-      successElement.className = 'fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 font-montserrat';
-      successElement.textContent = 'Thank you for your message! 💕';
-      document.body.appendChild(successElement);
-      
-      setTimeout(() => {
+      if (document.body.contains(successElement)) {
         document.body.removeChild(successElement);
-      }, 3000);
-    }, 500);
+      }
+    }, 3000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

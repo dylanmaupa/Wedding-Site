@@ -16,11 +16,33 @@ const RSVPSection: React.FC = () => {
 
   // Replace with your actual WhatsApp number (include country code without + or spaces)
   const whatsappNumber = '+263788524928'; // Example: US number would be like 15551234567
+  
+  // Replace with your actual Google Apps Script URL
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwRB6YTGLS3DLWqBvPSTC3kx_dAQfAhwj04KanUhMYXHn7NpfvL_96sNu4Hn7J27dNT/exec';
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
+
+    try {
+      // First, submit to Google Sheets
+      const formDataForSheets = new FormData();
+      formDataForSheets.append('timestamp', new Date().toISOString());
+      formDataForSheets.append('name', formData.name);
+      formDataForSheets.append('email', formData.email);
+      formDataForSheets.append('guests', formData.guests);
+      formDataForSheets.append('attendance', formData.attendance);
+      formDataForSheets.append('dietaryRestrictions', formData.dietaryRestrictions);
+      formDataForSheets.append('message', formData.message);
+
+      // Submit to Google Sheets (don't wait for response to avoid blocking WhatsApp)
+      fetch(scriptURL, {
+        method: 'POST',
+        body: formDataForSheets,
+      }).catch(error => {
+        console.log('Google Sheets submission error (non-blocking):', error);
+      });
 
     // Create WhatsApp message
     const whatsappMessage = `🎉 *Wedding RSVP* 🎉
@@ -39,28 +61,24 @@ const RSVPSection: React.FC = () => {
     const encodedMessage = encodeURIComponent(whatsappMessage);
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-    // Simulate processing time
-    setTimeout(() => {
-      try {
-        // Open WhatsApp
-        window.open(whatsappURL, '_blank');
-        
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          guests: '1',
-          attendance: '',
-          dietaryRestrictions: '',
-          message: '',
-        });
-      } catch (error) {
-        console.error('Error:', error);
-        setSubmitStatus('error');
-      } finally {
-        setIsSubmitting(false);
-      }
-    }, 1000);
+      // Open WhatsApp
+      window.open(whatsappURL, '_blank');
+      
+      setSubmitStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        guests: '1',
+        attendance: '',
+        dietaryRestrictions: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -201,13 +219,13 @@ const RSVPSection: React.FC = () => {
 
             {submitStatus === 'success' && (
               <div className="mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl text-center">
-                <p className="font-montserrat">Thank you for your RSVP! WhatsApp should have opened with your message. We can't wait to celebrate with you! 💕</p>
+                <p className="font-montserrat">Thank you for your RSVP! Your response has been saved and WhatsApp opened with your message. We can't wait to celebrate with you! 💕</p>
               </div>
             )}
 
             {submitStatus === 'error' && (
               <div className="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-xl text-center">
-                <p className="font-montserrat">Sorry, there was an error opening WhatsApp. Please try again or contact us directly.</p>
+                <p className="font-montserrat">Sorry, there was an error processing your RSVP. Please try again or contact us directly.</p>
               </div>
             )}
           </form>

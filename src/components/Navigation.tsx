@@ -33,7 +33,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeSection, onSectionChange 
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
             <Heart className="h-6 w-6 text-soft-rose" fill="currentColor" />
-            <span className="font-playfair font-semibold text-lg text-dark-olive">K & M</span>
+            <span className="font-playfair font-semibold text-lg text-dark-olive">M & K</span>
           </div>
           
           <div className="hidden md:flex space-x-8">

@@ -3,6 +3,8 @@ import { Calendar, MapPin } from 'lucide-react';
 import bgimg1 from '../carousel-bg/_MG_0440 copy.jpg';
 import bgimg2 from '../carousel-bg/IMG_0486 copy.jpg';
 import bgimg3 from '../carousel-bg/IMG_1464.jpg';
+import bgimg4 from '../carousel-bg/IMG_1470.jpg';
+import bgimg5 from '../carousel-bg/IMG_1477.jpg';
 
 const HeroSection: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -17,6 +19,8 @@ const HeroSection: React.FC = () => {
     bgimg1,
     bgimg2,
     bgimg3,
+    bgimg4,
+    bgimg5
   ];
 
   useEffect(() => {
@@ -52,7 +56,7 @@ const HeroSection: React.FC = () => {
   }, [backgroundImages.length]);
 
   return (
-    <section className="min-h-screen relative flex items-center justify-center px-4 pt-16 pb-8 overflow-hidden">
+    <section className="min-h-screen relative flex items-center justify-center px-4 pt-16 pb-8 overflow-hidden hero-section">
       {/* Background Carousel */}
       <div className="absolute inset-0 z-0">
         {backgroundImages.map((image, index) => (
@@ -79,7 +83,7 @@ const HeroSection: React.FC = () => {
           <h1 className="font-playfair text-6xl md:text-8xl lg:text-9xl font-bold text-dark-olive mb-4">
             Makanaka <span className="text-soft-rose">&</span> Kudakwashe
           </h1>
-          <p className="font-montserrat text-xl md:text-2xl text-muted-sage font-light">
+          <p className="font-montserrat text-xl md:text-2xl text-dark-olive font-light">
             Together forever, never apart
           </p>
         </div>
