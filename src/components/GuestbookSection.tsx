@@ -37,21 +37,7 @@ const GuestbookSection: React.FC = () => {
 
   const setDefaultMessages = () => {
     const defaultMessages = [
-      {
-        name: 'Emma & James',
-        message: 'We are so happy for you both! Can\'t wait to celebrate your special day. Wishing you a lifetime of love and happiness! 💕',
-        date: '2024-03-15',
-      },
-      {
-        name: 'The Johnson Family',
-        message: 'Sarah and Michael, you two are perfect for each other! We\'re thrilled to be part of your wedding celebration.',
-        date: '2024-03-10',
-      },
-      {
-        name: 'Alex & Sophie',
-        message: 'From your college friends - we\'ve watched your love story unfold and it\'s been beautiful to witness. Congratulations!',
-        date: '2024-03-08',
-      },
+      
     ];
     setGuestMessages(defaultMessages);
     localStorage.setItem('weddingGuestMessages', JSON.stringify(defaultMessages));

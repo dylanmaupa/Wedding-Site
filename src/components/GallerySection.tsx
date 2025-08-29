@@ -16,32 +16,12 @@ const GallerySection: React.FC = () => {
       alt: 'Romantic dinner date'
     },
     {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 11.55.53 (3).jpeg',
-      alt: 'Hiking adventure together'
-    },
-    {
       src: '/Gallery/WhatsApp Image 2025-08-26 at 11.55.53.jpeg',
       alt: 'Cozy winter evening'
     },
     {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 11.55.54 (2).jpeg',
-      alt: 'The proposal moment'
-    },
-    {
       src: '/Gallery/WhatsApp Image 2025-08-26 at 11.55.56 (1).jpeg',
       alt: 'Celebrating our engagement'
-    },
-    {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 11.55.56 (2).jpeg',
-      alt: 'Weekend getaway'
-    },
-    {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 11.55.56 (3).jpeg',
-      alt: 'Family gathering'
-    },
-    {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 11.55.57 (1).jpeg',
-      alt: 'Date night in the city'
     },
     {
       src: '/Gallery/WhatsApp Image 2025-08-26 at 11.55.57 (2).jpeg',
@@ -52,39 +32,11 @@ const GallerySection: React.FC = () => {
       alt: 'Dancing in the kitchen'
     },
     {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 13.03.40 (1).jpeg',
-      alt: 'Sunset walk on the beach'
-    },
-    {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 13.03.40.jpeg',
-      alt: 'Picnic in the park'
-    },
-    {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 13.03.42.jpeg',
-      alt: 'Holiday celebration'
-    },
-    {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 13.03.43 (1).jpeg',
-      alt: 'Adventure trip'
-    },
-    {
       src: '/Gallery/WhatsApp Image 2025-08-26 at 13.03.43.jpeg',
       alt: 'Weekend getaway'
     },
     {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 13.03.44.jpeg',
-      alt: 'Family gathering'
-    },
-    {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 13.03.45.jpeg',
-      alt: 'Date night in the city'
-    },
-    {
       src: '/Gallery/WhatsApp Image 2025-08-26 at 13.03.46 (1).jpeg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: '/Gallery/WhatsApp Image 2025-08-26 at 13.03.46.jpeg',
       alt: 'Date night in the city'
     },
     {
@@ -96,55 +48,7 @@ const GallerySection: React.FC = () => {
       alt: 'Date night in the city'
     },
     {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443768/_MG_0525_lij6as.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443768/IMG_0413_bvxwxb.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443769/_MG_0522_szlmn5.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443770/IMG_0418_ot6naa.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443784/_MG_0519_inazzl.jpg',
-      alt: 'Date night in the city'
-    },
-    {
       src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443788/IMG_0393_refows.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443790/_MG_0521_pzulp4.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443795/_MG_0497_chcqyp.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443796/_MG_0523_fo5lui.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443805/IMG_0391_xlmct4.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443808/_MG_0504_rvnnn6.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443808/_MG_0504_rvnnn6.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443808/_MG_0485_zaxfy7.jpg',
       alt: 'Date night in the city'
     },
     {
@@ -156,51 +60,7 @@ const GallerySection: React.FC = () => {
       alt: 'Date night in the city'
     },
     {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443824/_MG_0475_tmw5kq.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443825/IMG_0373_lgknfb.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443825/IMG_0388_muv71w.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443827/_MG_0476_c8ewfd.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443829/IMG_0372_uxdcwx.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443837/IMG_0371_th00pu.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443838/IMG_0424_fkqmjd.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443845/IMG_0369_nvhtd5.jpg',
-      alt: 'Date night in the city'
-    },
-    {
       src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443877/_MG_0469_ycu8li.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443881/_MG_0452_psuxr5.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443877/_MG_0467_akehy0.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443881/_MG_0466_bmuru3.jpg',
       alt: 'Date night in the city'
     },
     {
@@ -208,15 +68,7 @@ const GallerySection: React.FC = () => {
       alt: 'Date night in the city'
     },
     {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443888/_MG_0464_bqydv6.jpg',
-      alt: 'Date night in the city'
-    },
-    {
       src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443897/_MG_0445_tiqtvv.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443898/_MG_0449_matisv.jpg',
       alt: 'Date night in the city'
     },
     {
@@ -228,15 +80,7 @@ const GallerySection: React.FC = () => {
       alt: 'Date night in the city'
     },
     {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443901/_MG_0441_wsko09.jpg',
-      alt: 'Date night in the city'
-    },
-    {
       src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443903/_MG_0442_aivdck.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443909/_MG_0439_c8adi3.jpg',
       alt: 'Date night in the city'
     },
     {
@@ -244,15 +88,7 @@ const GallerySection: React.FC = () => {
       alt: 'Date night in the city'
     },
     {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443847/IMG_0364_cnysv8.jpg',
-      alt: 'Date night in the city'
-    },
-    {
       src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443849/IMG_0362_snpw0z.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443850/IMG_0360_p1tt2m.jpg',
       alt: 'Date night in the city'
     },
     {
@@ -260,43 +96,7 @@ const GallerySection: React.FC = () => {
       alt: 'Date night in the city'
     },
     {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443859/IMG_0357_y76etc.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443865/IMG_0356_udqndf.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443916/IMG_0484_n21zqs.jpg',
-      alt: 'Date night in the city'
-    },
-    {
       src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443917/_MG_0438_zdzzj8.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443918/_MG_0436_jwwrst.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443926/IMG_0477_ehbzyj.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443929/IMG_0481_quxb9i.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443932/IMG_0479_qvggmu.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443937/IMG_0475_gsoita.jpg',
-      alt: 'Date night in the city'
-    },
-    {
-      src: 'https://res.cloudinary.com/dcqawu6rn/image/upload/v1756443944/IMG_0473_nrthd5.jpg',
       alt: 'Date night in the city'
     },
   ];

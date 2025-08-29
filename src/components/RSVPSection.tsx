@@ -15,7 +15,7 @@ const RSVPSection: React.FC = () => {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   // Replace with your actual WhatsApp number (include country code without + or spaces)
-  const whatsappNumber = '+263788524928'; // Example: US number would be like 15551234567
+  const whatsappNumber = '+263773058409'; // Example: US number would be like 15551234567
   
   // Replace with your actual Google Apps Script URL
   const scriptURL = 'https://script.google.com/macros/s/AKfycbwRB6YTGLS3DLWqBvPSTC3kx_dAQfAhwj04KanUhMYXHn7NpfvL_96sNu4Hn7J27dNT/exec';
