@@ -145,7 +145,7 @@ const GuestbookSection: React.FC = () => {
                   required
                   rows={5}
                   className="w-full px-4 py-3 rounded-xl border-2 border-cream focus:border-soft-rose focus:outline-none transition-colors font-montserrat resize-none"
-                  placeholder="Share your thoughts, wishes, or favorite memory of Sarah & Michael..."
+                  placeholder="Share your thoughts, wishes, or favorite memory of Maka & Kuda..."
                 />
               </div>
               
