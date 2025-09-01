@@ -132,6 +132,9 @@ const AboutSection: React.FC = () => {
             <p className="font-montserrat text-muted-sage text-sm">
             <i><strong>1 Corinthians 13:13:</strong> "And now these three remain: faith, hope, and love. But the greatest of these is love."</i>
           </p>
+            <p className="font-montserrat text-muted-sage text-sm">
+            <i><strong>WE HAVE A MAXIMUM OF 200 GUESTS, KINDLY NOTE, ENTRY IS STRICTLY BY INVITATION. THANK YOU FOR UNDERSTANDING</strong></i>
+          </p>
           </div>
         </div>
       </div>

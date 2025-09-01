@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, MapPin, Utensils, Music, Camera } from 'lucide-react';
+import { Clock, MapPin, Utensils, Music, Camera, AlertCircle } from 'lucide-react';
 
 const EventDetails: React.FC = () => {
   const schedule = [
@@ -43,7 +43,7 @@ const EventDetails: React.FC = () => {
             </div>
             <div className="bg-white rounded-3xl p-8 shadow-lg mb-8">
               <h3 className="font-playfair text-2xl font-semibold text-dark-olive mb-6 flex items-center">
-                <MapPin className="h-6 w-6 text-soft-rose mr-3" />
+                <AlertCircle className="h-6 w-6 text-soft-rose mr-3" />
                 PLEASE NOTE
               </h3>
               <div className="space-y-4">
