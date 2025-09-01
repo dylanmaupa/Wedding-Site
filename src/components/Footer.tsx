@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
               <Facebook className="h-5 w-5" />
             </a>
             <a 
-              href="mailto:hello@sarahandmichael.com" 
+              href="mailto:kudaandmakawedding@gmail.com" 
               className="bg-white/10 hover:bg-soft-rose/20 p-3 rounded-full transition-colors duration-300"
             >
               <Mail className="h-5 w-5" />
